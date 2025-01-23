@@ -17,20 +17,6 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    // Handle hardware back button to prevent the default back behavior
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      () => {
-        Alert.alert("Info", "Navigating to Signup Page");
-        navigation.navigate("SignupPage"); // Navigate to the signup page
-        return true; // Disable the default back behavior
-      }
-    );
-
-    return () => backHandler.remove(); // Clean up the event listener on unmount
-  });
-
   const handleLogin = async () => {
     try {
       // Use the imported `auth` object
@@ -70,7 +56,6 @@ const LoginPage = () => {
         value={password}
         onChangeText={(text) => setPassword(text)}
       />
-
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>

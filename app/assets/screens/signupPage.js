@@ -77,6 +77,10 @@ const SignupPage = () => {
       <TouchableOpacity style={styles.button} onPress={handleSignup}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("LoginPage")}>
+        <Text style={styles.linkText}>Already have an account? Login</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -105,7 +109,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   button: {
-    backgroundColor: "green",
+    backgroundColor: "#4CAF50",
     padding: 12,
     borderRadius: 8,
     alignItems: "center",
