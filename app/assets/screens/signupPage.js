@@ -26,6 +26,10 @@ const SignupPage = () => {
       return;
     }
     try {
+      if (password !== confirmPassword) {
+        Alert.alert("Passwords do not match");
+        return;
+      }
       // Use the imported `auth` object
       const userCredential = await createUserWithEmailAndPassword(
         auth,

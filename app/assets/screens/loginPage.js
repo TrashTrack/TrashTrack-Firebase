@@ -8,10 +8,12 @@ import {
   Alert,
   BackHandler,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { auth } from "../firebaseConfig"; // Import the 'auth' object
 import { signInWithEmailAndPassword } from "firebase/auth"; // Import the function
 
-const LoginPage = ({ navigation }) => {
+const LoginPage = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -71,9 +73,6 @@ const LoginPage = ({ navigation }) => {
 
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("SignupPage")}>
-        <Text style={styles.linkText}>Don't have an account? Sign up</Text>
       </TouchableOpacity>
     </View>
   );
