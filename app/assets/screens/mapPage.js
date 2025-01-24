@@ -67,12 +67,16 @@ export default function MapScreen() {
           coordinate={region} // Marker at user's current location
           title="Your Location"
           description="You are here"
+          image={require("../home.png")}
+          pinColor={null}
         />
         {driverLocation && (
           <Marker
             coordinate={driverLocation} // Marker for the driver location from Firebase
             title="Driver Location"
             description="Driver's current location"
+            image={require("../truck.png")}
+            pinColor={null}
           />
         )}
       </MapView>
